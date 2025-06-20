@@ -93,7 +93,6 @@ io.on('connection', (socket) => {
     });
 
     socket.on('message', (msg) => {
-        // msg має вигляд: { room: 'roomId', author: 'userId', text: '...' }
         io.to(msg.room).emit('message', msg);
         console.log(`Message from ${msg.author} to room ${msg.room}: ${msg.text}`);
     });

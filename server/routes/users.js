@@ -254,7 +254,6 @@ router.get('/:id/friends', async (req, res) => {
             return res.status(400).json({ error: 'Невірний формат ID.' });
         }
 
-        // Завантажуємо користувача разом із друзями
         const user = await User.findById(id)
             .populate('friends', 'firstName lastName phone avatarUrl');
 
@@ -262,7 +261,6 @@ router.get('/:id/friends', async (req, res) => {
             return res.status(404).json({ error: 'Користувача не знайдено.' });
         }
 
-        // Маппінг кожного друга з _id → id
         const friends = user.friends.map(u => ({
             id:        u._id.toString(),
             firstName: u.firstName,

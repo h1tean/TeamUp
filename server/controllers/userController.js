@@ -19,10 +19,8 @@ export const postAvatar = async (req, res) => {
         const file = req.file;
         if (!file) return res.status(400).json({ error: 'No file uploaded' });
 
-        // Повертаємо публічний URL
         const avatarUrl = `/static/avatars/${file.filename}`;
 
-        // Зберігаємо в базу
         await User.findByIdAndUpdate(userId, { avatarUrl });
 
         res.json({ avatarUrl });

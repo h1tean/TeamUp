@@ -144,17 +144,14 @@ router.post('/forgot-password', async (req, res) => {
         const { phone } = req.body;
         if (!phone) return res.status(400).json({ error: 'phone is required' });
 
-        // знайти користувача за телефоном
         const user = await User.findOne({ phone });
         if (!user) return res.status(404).json({ error: 'User not found' });
 
-        // згенерувати код (можете поки що простий рандом)
         const code = String(Math.floor(100000 + Math.random() * 900000));
         user.verificationCode = code;
         user.verificationCodeExpires = Date.now() + 5*60*1000;  // 5 хв
         await user.save();
 
-        // надсилання через Twilio Verify або SMS
         await client.verify.v2
             .services(process.env.TWILIO_VERIFY_SID)
             .verifications.create({ to: user.phone, channel: 'sms' });

@@ -48,16 +48,9 @@ function getRelativeTime(ts) {
     return `${Math.floor(D / 365)} р тому`;
 }
 
-// Коментар
 function CommentItem({ comment, postId, currentUserId, onToggleLikeComment, onDeleteComment }) {
     return (
         <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
-            <Avatar
-                src={comment.avatarUrl}
-                sx={{ width: 32, height: 32, bgcolor: 'grey.300', mr: 1 }}
-            >
-                {!comment.avatarUrl && (comment.authorName?.charAt(0) || "?")}
-            </Avatar>
             <Box sx={{ flexGrow: 1 }}>
                 <Typography component="span" sx={{ fontWeight: 600, mr: 1, display: 'inline' }}>
                     <RouterLink

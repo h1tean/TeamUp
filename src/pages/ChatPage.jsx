@@ -150,7 +150,6 @@ export default function ChatPage() {
         endRef.current?.scrollIntoView({ behavior: 'smooth' });
     }, [allMessages, selectedChatUser]);
 
-    // ==== Стейт для введення, файлів, меню, редагування, діалогу ====
     const [input, setInput] = useState('');
     const [fileToSend, setFileToSend] = useState(null);
     const [menuPosition, setMenuPosition] = useState(null);

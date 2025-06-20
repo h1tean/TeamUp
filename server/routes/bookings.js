@@ -11,10 +11,6 @@ function isValidObjectId(id) {
     return mongoose.Types.ObjectId.isValid(id);
 }
 
-/**
- * GET /api/bookings
- * Отримати всі бронювання (за датою, від найновіших)
- */
 router.get('/', async (req, res) => {
     try {
         const filter = {};

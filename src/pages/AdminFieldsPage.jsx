@@ -42,7 +42,6 @@ export default function AdminFieldsPage() {
             return;
         }
 
-        // Автоматично визначаємо кількість слотів для поля
         const timeSlots = [
             { start: "08:00", end: "10:00" }, { start: "10:00", end: "12:00" },
             { start: "12:00", end: "14:00" }, { start: "14:00", end: "16:00" },

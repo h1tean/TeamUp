@@ -21,7 +21,6 @@ export default function FieldCreatePage() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // Автоматично визначаємо кількість слотів для поля
         const slotCount = type === '5x5' ? 10 : 22;
         const slots = [];
         for (const t of timeSlots) {

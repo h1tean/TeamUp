@@ -14,7 +14,6 @@ export default function BookingCalendar({ date, type, bookings, onSlotSelect, se
             <Typography variant="h6" sx={{ mb: 2 }}>Слоти на {date.toLocaleDateString('uk-UA')}</Typography>
             <Grid container spacing={2}>
                 {TIME_SLOTS.map((slot, idx) => {
-                    // Знаходимо всі бронювання на цей слот і дату (mock: bookings = масив бронювань на цю дату)
                     const count = bookings.filter(b => b.timeSlot === slot).length;
                     const isFull = count >= maxSlots;
                     return (

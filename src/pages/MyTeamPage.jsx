@@ -253,7 +253,6 @@ export default function MyTeamPage() {
     return (
         <Box sx={{ display: 'flex', justifyContent: 'center', mt: 3 }}>
             <Box sx={{ width: '100%', maxWidth: 700 }}>
-                {/* Заголовок */}
                 <Box
                     sx={{
                         backgroundColor: 'primary.main',

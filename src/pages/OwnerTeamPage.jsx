@@ -41,7 +41,6 @@ export default function OwnerTeamPage({ currentUser }) {
     return (
         <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start', backgroundColor: 'background.default', p: 2 }}>
             <Box sx={{ width: '100%', maxWidth: 700 }}>
-                {/* Шапка — тільки назва */}
                 <Box sx={{
                     backgroundColor: 'primary.main',
                     borderTopLeftRadius: 8,
@@ -83,7 +82,6 @@ export default function OwnerTeamPage({ currentUser }) {
                         color="error"
                         startIcon={<DeleteIcon />}
                         sx={{ flex: 1, fontWeight: 500, py: 1.5 }}
-                        // onClick={handleDeleteTeam}
                     >
                         ВИДАЛИТИ КОМАНДУ
                     </Button>

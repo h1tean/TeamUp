@@ -42,7 +42,7 @@ router.post('/upload', authMiddleware, upload.single('file'), (req, res) => {
     if (!req.file) return res.status(400).json({ error: 'Файл не отримано' });
     const ext = path.extname(req.file.originalname);
     const url = `/static/team-chat/${req.file.filename}${ext}`;
-    // Перейменувати файл для збереження розширення
+
     fs.renameSync(req.file.path, `uploads/team-chat/${req.file.filename}${ext}`);
     res.json({ success: true, url });
 });
